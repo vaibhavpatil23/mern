@@ -1,9 +1,14 @@
+
+const dotenv = require('dotenv')
 const mongoose = require("mongoose");
 
 const express = require("express");
 const app = express();
-const DB =
-  "mongodb+srv://vaibhav:vaibhav@9579@cluster0.hweyi0n.mongodb.net/mernstack?retryWrites=true&w=majority";
+dotenv.config({path:'./config.env'})
+
+
+const DB = process.env.DATABASE;
+const PORT = processenv.PORT;
 
 mongoose
   .connect(DB, {
@@ -43,6 +48,6 @@ app.get("/signin", (req, res) => {
 app.get("/signup", (req, res) => {
   res.send("Hello singup the you account ");
 });
-app.listen(3000, () => {
-  console.log(`server is runing is port no 3000`);
+app.listen(PORT, () => {
+  console.log(`server is runing is port no ${PORT}`);
 });
