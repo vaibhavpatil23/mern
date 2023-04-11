@@ -1,5 +1,21 @@
+const mongoose = require("mongoose");
+
 const express = require("express");
 const app = express();
+const DB =
+  "mongodb+srv://vaibhav:vaibhav@9579@cluster0.hweyi0n.mongodb.net/mernstack?retryWrites=true&w=majority";
+
+mongoose
+  .connect(DB, {
+    usenewUrlparser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  })
+  .then(() => {
+    console.log("connection is succesfully");
+  })
+  .catch((err) => console.log("no conection"));
 
 const middleware = (req, res, next) => {
   console.log("Hello my middleware");
