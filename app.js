@@ -6,7 +6,10 @@ const app = express();
 
 dotenv.config({ path: "./config.env" });
 require("./DB/conn");
-const USER = require("./models/userschema");
+
+app.use(express.json());
+
+// const USER = require("./models/userschema");
 
 app.use(require("./Router/auth"));
 
@@ -41,4 +44,3 @@ app.get("/signup", (req, res) => {
 app.listen(PORT, () => {
   console.log(`server is runing is port no ${PORT}`);
 });
- 
