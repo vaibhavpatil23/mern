@@ -8,6 +8,8 @@ dotenv.config({ path: "./config.env" });
 require("./DB/conn");
 const USER = require("./models/userschema");
 
+app.use(require("./Router/auth"));
+
 const PORT = process.env.PORT;
 
 const middleware = (req, res, next) => {
@@ -15,9 +17,9 @@ const middleware = (req, res, next) => {
   next();
 };
 
-app.get("/", (req, res) => {
-  res.send("Hello world from the server");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello world from the server ");
+// });
 
 app.get("/about", middleware, (req, res) => {
   console.log("Hello my about");
@@ -39,3 +41,4 @@ app.get("/signup", (req, res) => {
 app.listen(PORT, () => {
   console.log(`server is runing is port no ${PORT}`);
 });
+ 
