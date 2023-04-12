@@ -68,6 +68,7 @@ router.post("/signin", async (req, res) => {
     console.log(User);
   } catch (err) {
     console.log(err);
+    console.log(err);
   }
 });
 
