@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 
 dotenv.config({ path: "./config.env" });
-require("./DB/conn");
+require("./server/DB/conn");
 
 app.use(express.json());
 
