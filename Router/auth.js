@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
 //   User.findOne({ email: email })
 //     .then((UserExist) => {
 //       if (UserExist) {
-//         return res.status(422).json({ error: "Email already exist" });
+//         return re s.status(422).json({ error: "Email already exist" });
 //       }
 //       const User = new User({ name, email, phone, work, password, cpassword });
 //       User.save()
