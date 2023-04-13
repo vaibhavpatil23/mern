@@ -9,7 +9,7 @@ require("./server/DB/conn");
 
 app.use(express.json());
 
-// const USER = require("./models/userschema");
+// const USER = require("./models/npmuserschema");
 
 app.use(require("./Router/auth"));
 

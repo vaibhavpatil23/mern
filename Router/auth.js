@@ -10,7 +10,6 @@ router.get("/", (req, res) => {
 });
 // router.post("/register",  (req, res) => {
 //   const { name, email, phone, work, password, cpassword } = req.body;
-
 //   if (!name || !email || !phone || !work || !password || !cpassword) {
 //     return res.status(422).json({ error: "piz filled the field property" });
 //   }
@@ -71,5 +70,4 @@ router.post("/signin", async (req, res) => {
     console.log(err);
   }
 });
-
 module.exports = router;
